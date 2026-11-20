@@ -81,16 +81,16 @@ Aplikasi ini tidak memerlukan pelayan web (*web server*) yang rumit atau pemasan
 
 | Tahap | Kelas Utama / Subjek | Konsep Pengkelasan yang Diuji | Petua Asal |
 |:---:|:---|:---|:---|
-| **1** | `150` – `823` | Susunan asas 10 kelas utama DDC (000 – 900) mengikut turutan nombor bulat menaik. | *Dimulakan dengan buku kuning (150). Diakhiri dengan buku hijau (823).* |
-| **2** | `510` – `570` | Divisyen dan seksyen nombor bulat dalam kelas yang sama (500 Sains Tulen). | *Buku biru (510) di awal rak. 519 mendahului 530, dan diakhiri dengan buku kuning (570).* |
-| **3** | `004` – `004.6` | Nombor bulat asas mendahului pecahan satu titik perpuluhan (`004` sebelum `004.1`). | *Nombor asas 004 tanpa perpuluhan mendahului titik perpuluhan. Diakhiri dengan 004.6 (kelabu).* |
-| **4** | `621.04` – `621.205` | Nilai perpuluhan matematik sebenar (`.18` mendahului `.2` kerana `.18 < .20`). | *Awas perangkap perpuluhan! .18 lebih kecil daripada .2 (.20). Dimulakan dengan buku jingga.* |
-| **5** | `330.9595` | Turutan abjad kod pengarang / Cutter 3 huruf (`ABD`, `CHE`, `ISM`, `TAN`, `ZAI`). | *Nombor kelas semua sama (330.9595). Susun kod pengarang mengikut turutan abjad A hingga Z.* |
-| **6** | `823.914` | Nombor Cutter berangka bertindak sebagai perpuluhan (`.A45` sebelum `.A5`). | *Nombor Cutter berangka adalah perpuluhan: .A45 mendahului .A5 (.50), manakala .R68 mendahului .R7.* |
-| **7** | `658.4 KOT` | Susunan kronologi tahun penerbitan (`2012` hingga `2024`) bagi buku dan pengarang sama. | *Semua buku mempunyai nombor dan pengarang sama. Susun mengikut tahun terbit: 2012 di awal, 2024 di akhir.* |
-| **8** | `959.5 HAL` | Keutamaan jilid (`v.1`, `v.2`, `v.3`) dan nombor salinan (`c.1`, `c.2`). | *Jilid 1 (v.1) mendahului Jilid 2 (v.2). Di dalam jilid yang sama, salinan 1 (c.1) mendahului salinan 2 (c.2).* |
-| **9** | `720` – `720.9595` | Hierarki pecahan DDC bertingkat (daripada skop topik umum kepada khusus/wilayah). | *Daripada skop umum (720) kepada skop khusus (720.9595). Dimulakan dengan buku jingga, diakhiri dengan buku merah.* |
-| **10** | `005.13` – `005.14` | Penguasaan penuh gabungan perpuluhan panjang, abjad pengarang, tahun, dan jilid. | *Kacang! Gabungkan semua: 005.13 mendahului 005.133, JAV mendahului PYT, v.1 sebelum v.2, dan 005.14 di penghujung.* |
+| **1** | `150` – `823` | Susunan asas 10 kelas utama DDC (000 – 900) mengikut turutan nombor bulat menaik. | *Dimulakan dengan buku kuning. Diakhiri dengan buku hijau.* |
+| **2** | `510` – `570` | Divisyen dan seksyen nombor bulat dalam kelas yang sama (500 Sains Tulen). | *Buku biru di awal rak dan diakhiri dengan buku kuning.* |
+| **3** | `004` – `004.6` | Nombor bulat asas mendahului pecahan satu titik perpuluhan (`004` sebelum `004.1`). | *Nombor asas tanpa perpuluhan mendahului titik perpuluhan. Diakhiri dengan kelabu.* |
+| **4** | `621.04` – `621.205` | Nilai perpuluhan matematik sebenar (`.18` mendahului `.2` kerana `.18 < .20`). | *.18 lebih kecil daripada .2* |
+| **5** | `330.9595` | Turutan abjad kod pengarang / Cutter 3 huruf (`ABD`, `CHE`, `ISM`, `TAN`, `ZAI`). | *Nombor sama tapi abjad tidak* |
+| **6** | `823.914` | Nombor Cutter berangka bertindak sebagai perpuluhan (`.A45` sebelum `.A5`). | *.A45 mendahului .A5* |
+| **7** | `658.4 KOT` | Susunan kronologi tahun penerbitan (`2012` hingga `2024`) bagi buku dan pengarang sama. | *Yang lama mendahului yang baru* |
+| **8** | `959.5 HAL` | Keutamaan jilid (`v.1`, `v.2`, `v.3`) dan nombor salinan (`c.1`, `c.2`). | *Volume* |
+| **9** | `720` – `720.9595` | Hierarki pecahan DDC bertingkat (daripada skop topik umum kepada khusus/wilayah). | *Anda mampu selesaikan sendiri..* |
+| **10** | `005.13` – `005.14` | Penguasaan penuh gabungan perpuluhan panjang, abjad pengarang, tahun, dan jilid. | *Kacang!* |
 
 ---
 

@@ -61,7 +61,7 @@ const DDC_LEVELS = [
     "id": 1,
     "title": "Tahap 1",
     "code": "ddc_level_01",
-    "hint": "Dimulakan dengan buku kuning (150). Diakhiri dengan buku hijau (823).",
+    "hint": "Dimulakan dengan buku kuning. Diakhiri dengan buku hijau.",
     "explanation": "Sistem DDC disusun mengikut nilai nombor kelas dari 000 hingga 999. Oleh itu, 150 mendahului 330, diikuti 510, 658, dan 823.",
     "books": [
       {
@@ -115,7 +115,7 @@ const DDC_LEVELS = [
     "id": 2,
     "title": "Tahap 2",
     "code": "ddc_level_02",
-    "hint": "Buku biru (510) di awal rak. 519 mendahului 530, dan diakhiri dengan buku kuning (570).",
+    "hint": "Buku biru di awal rak dan diakhiri dengan buku kuning.",
     "explanation": "Dalam kelas yang sama (500 Sains Tulen), bandingkan nilai digit puluhan dan sa: 510 < 519 < 530 < 540 < 570.",
     "books": [
       {
@@ -169,7 +169,7 @@ const DDC_LEVELS = [
     "id": 3,
     "title": "Tahap 3",
     "code": "ddc_level_03",
-    "hint": "Nombor asas 004 tanpa perpuluhan mendahului titik perpuluhan. Diakhiri dengan 004.6 (kelabu).",
+    "hint": "Nombor asas tanpa perpuluhan mendahului titik perpuluhan. Diakhiri dengan kelabu.",
     "explanation": "Nombor bulat 004 sentiasa mendahului nombor yang mempunyai pecahan perpuluhan (.1 hingga .6). Seterusnya nilai perpuluhan disusun menaik: .1 < .2 < .5 < .6.",
     "books": [
       {
@@ -223,7 +223,7 @@ const DDC_LEVELS = [
     "id": 4,
     "title": "Tahap 4",
     "code": "ddc_level_04",
-    "hint": "Awas perangkap perpuluhan! .18 lebih kecil daripada .2 (.20). Dimulakan dengan buku jingga.",
+    "hint": ".18 lebih kecil daripada .2",
     "explanation": "Perpuluhan Dewey adalah pecahan matematik sebenar: .04 < .10 < .18 < .20 < .205. Jangan anggap 18 lebih besar daripada 2 kerana .2 bersamaan .20!",
     "books": [
       {
@@ -277,7 +277,7 @@ const DDC_LEVELS = [
     "id": 5,
     "title": "Tahap 5",
     "code": "ddc_level_05",
-    "hint": "Nombor kelas semua sama (330.9595). Susun kod pengarang mengikut turutan abjad A hingga Z.",
+    "hint": "Nombor sama tapi abjad tidak",
     "explanation": "Apabila nombor kelas sama (330.9595 Sejarah Ekonomi Malaysia), susunan ditentukan oleh baris kod abjad pengarang mengikut abjad: ABD, CHE, ISM, TAN, ZAI.",
     "books": [
       {
@@ -331,7 +331,7 @@ const DDC_LEVELS = [
     "id": 6,
     "title": "Tahap 6",
     "code": "ddc_level_06",
-    "hint": "Nombor Cutter berangka adalah perpuluhan: .A45 mendahului .A5 (.50), manakala .R68 mendahului .R7.",
+    "hint": ".A45 mendahului .A5",
     "explanation": "Nombor Cutter berangka (.A45, .A5, .K56, .R68, .R7) dikira sebagai perpuluhan. Nilai .45 lebih kecil daripada .50, dan .68 lebih kecil daripada .70.",
     "books": [
       {
@@ -385,7 +385,7 @@ const DDC_LEVELS = [
     "id": 7,
     "title": "Tahap 7",
     "code": "ddc_level_07",
-    "hint": "Semua buku mempunyai nombor dan pengarang sama. Susun mengikut tahun terbit: 2012 di awal, 2024 di akhir.",
+    "hint": "Yang lama mendahului yang baru",
     "explanation": "Apabila nombor kelas dan kod pengarang sama (658.4 KOT), buku disusun mengikut turutan tahun penerbitan paling awal hingga paling terkini (2012, 2016, 2019, 2021, 2024).",
     "books": [
       {
@@ -439,7 +439,7 @@ const DDC_LEVELS = [
     "id": 8,
     "title": "Tahap 8",
     "code": "ddc_level_08",
-    "hint": "Jilid 1 (v.1) mendahului Jilid 2 (v.2). Di dalam jilid yang sama, salinan 1 (c.1) mendahului salinan 2 (c.2).",
+    "hint": "Volume",
     "explanation": "Bagi karya multi-jilid (959.5 HAL), jilid disusun mengikut turutan v.1, v.2, dan v.3. Untuk jilid yang sama, salinan pertama (c.1) mendahului salinan kedua (c.2).",
     "books": [
       {
@@ -493,7 +493,7 @@ const DDC_LEVELS = [
     "id": 9,
     "title": "Tahap 9",
     "code": "ddc_level_09",
-    "hint": "Daripada skop umum (720) kepada skop khusus (720.9595). Dimulakan dengan buku jingga, diakhiri dengan buku merah.",
+    "hint": "Anda mampu selesaikan sendiri..",
     "explanation": "Struktur hierarki perpuluhan DDC: Setiap digit tambahan memperkhususkan skop subjek dan wilayah: 720 (Umum) < 720.9 (Sejarah) < 720.95 (Asia) < 720.959 (Asia Tenggara) < 720.9595 (Malaysia).",
     "books": [
       {
@@ -547,7 +547,7 @@ const DDC_LEVELS = [
     "id": 10,
     "title": "Tahap 10",
     "code": "ddc_level_10",
-    "hint": "Kacang! Gabungkan semua: 005.13 mendahului 005.133, JAV mendahului PYT, v.1 sebelum v.2, dan 005.14 di penghujung.",
+    "hint": "Kacang!",
     "explanation": "Penguasaan penuh DDC: Nilai perpuluhan .13 < .133 < .14. Antara buku 005.133, abjad pengarang JAV mendahului PYT, dan jilid 1 mendahului jilid 2.",
     "books": [
       {
