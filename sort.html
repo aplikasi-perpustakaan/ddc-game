@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <!-- Google tag (gtm.js) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TKKTQ272"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permainan Susunan Buku Dewey Decimal Classification (DDC) | Perpustakaan Tun Abdul Razak</title>
+
+  <!-- SEO & Maklumat Asas -->
+  <meta name="description" content="Aplikasi interaktif pembelajaran dan latihan menyusun buku mengikut Sistem Pengkelasan Perpuluhan Dewey (Dewey Decimal Classification - DDC) Perpustakaan Tun Abdul Razak, Universiti Teknologi MARA (UiTM).">
+  <meta name="author" content="Perpustakaan Tun Abdul Razak, Universiti Teknologi MARA">
+  <meta name="theme-color" content="#1e3a8a">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aplikasi-perpustakaan.github.io/ddc-game/">
+  <meta property="og:title" content="Permainan Susunan Buku Dewey Decimal Classification (DDC)">
+  <meta property="og:description" content="Latihan interaktif menyusun buku mengikut Sistem Pengkelasan Perpuluhan Dewey (DDC) Perpustakaan Tun Abdul Razak, UiTM. Uji kemahiran anda menyusun 10 tahap buku secara atas talian.">
+  <meta property="og:image" content="https://aplikasi-perpustakaan.github.io/ddc-game/og-image.png">
+  <meta property="og:image:secure_url" content="https://aplikasi-perpustakaan.github.io/ddc-game/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Permainan Susunan Buku Dewey Decimal Classification (DDC) - Perpustakaan Tun Abdul Razak">
+  <meta property="og:site_name" content="Perpustakaan Tun Abdul Razak">
+  <meta property="og:locale" content="ms_MY">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://aplikasi-perpustakaan.github.io/ddc-game/">
+  <meta name="twitter:title" content="Permainan Susunan Buku Dewey Decimal Classification (DDC)">
+  <meta name="twitter:description" content="Latihan interaktif menyusun buku mengikut Sistem Pengkelasan Perpuluhan Dewey (DDC) Perpustakaan Tun Abdul Razak, UiTM. Uji kemahiran anda menyusun 10 tahap buku secara atas talian.">
+  <meta name="twitter:image" content="https://aplikasi-perpustakaan.github.io/ddc-game/og-image.png">
+  <meta name="twitter:image:alt" content="Permainan Susunan Buku Dewey Decimal Classification (DDC)">
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header Utama -->
+  <header class="header-container">
+    <div class="brand-header">
+      <img src="logo.svg?v=1" alt="DDC Game - Perpustakaan Tun Abdul Razak" class="site-logo">
+    </div>
+    <h1>Berdasarkan klasifikasi Dewey Decimal Classification (DDC), susun kesemua 5 buku mengikut susunan yang betul.</h1>
+    <p class="subtitle">
+      Heret dan lepaskan (<em>drag &amp; drop</em>) buku ke slot yang betul, atau klik/ketik mana-mana buku kemudian klik buku sasaran untuk menukar kedudukan.
+    </p>
+
+    <div class="top-controls">
+      <!-- Statistik & Kawalan Bunyi -->
+      <div class="stats-badges">
+        <span id="stat-solved-count" class="badge">0 / 10 Selesai</span>
+        <button id="btn-mute" class="btn-icon">🔊 Bunyi: Hidup</button>
+        <button id="btn-reset-all" class="btn-icon">↺ Reset Semua</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bar Kemajuan Sentiasa Kelihatan (Sticky Progress Bar) -->
+  <div id="sticky-progress-bar" class="sticky-progress-container">
+    <div class="sticky-progress-content">
+      <div class="sticky-progress-left">
+        <span class="sticky-title">Kemajuan:</span>
+        <span id="sticky-solved-badge" class="badge">0 / 10 Selesai</span>
+        <div class="progress-track" title="Peratusan siap">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+      <div id="sticky-stage-pills" class="sticky-stage-pills" title="Klik nombor untuk lompat ke tahap berkenaan"></div>
+    </div>
+  </div>
+
+  <!-- Bekas Utama Tahap Permainan -->
+  <main id="game-levels-container"></main>
+
+  <!-- Peringatan Petugas di Bahagian Bawah -->
+  <div class="header-container" style="margin-top: 35px; border-left: 6px solid var(--primary-color);">
+    <h2 style="font-size: 20px; font-weight: 800; color: var(--primary-color); margin-bottom: 6px;">
+      Maklumkan petugas selepas memastikan kesemuanya "CORRECT!".
+    </h2>
+    <p style="color: var(--text-muted); font-size: 14px;">
+      Pastikan setiap tahap telah disemak menggunakan butang <strong>CHECK ORDER</strong> sehingga status bertukar menjadi hijau.
+    </p>
+  </div>
+
+  <footer class="footer-text">
+    <p>Hak Cipta Terpelihara &copy; 2026 Perpustakaan Tun Abdul Razak, Universiti Teknologi MARA</p>
+  </footer>
+
+  <!-- Modal Tahniah Keseluruhan -->
+  <div id="victory-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-icon">🏆</div>
+      <h2 class="modal-title">Tahniah! Selesai Semua!</h2>
+      <p class="modal-desc">
+        Hebat! Anda telah berjaya menyusun kesemua 10 tahap buku mengikut Sistem Pengkelasan Perpuluhan Dewey (DDC) dengan tepat.
+      </p>
+      <div class="modal-instruction">
+        📢 Sila maklumkan kepada petugas perpustakaan sekarang!
+      </div>
+      <button id="btn-close-modal" class="btn btn-primary" style="margin: 0 auto;">
+        Tutup &amp; Semak Semula
+      </button>
+    </div>
+  </div>
+
+  <!-- Kanvas Konfeti Keraian -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Skrip JavaScript -->
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
