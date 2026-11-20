@@ -11,6 +11,7 @@ class DDCGameApp {
     this.state = {};
     this.selectedBook = null; // Untuk mod klik/ketik tukar kedudukan
     this.draggedBook = null;
+    this.isDragging = false;  // Menghalang acara klik palsu selepas seretan selesai
 
     this.initLevelsState();
     this.bindEvents();
@@ -18,6 +19,7 @@ class DDCGameApp {
   }
 
   initLevelsState() {
+    this.selectedBook = null;
     this.levels.forEach(lvl => {
       // Susun buku mengikut slot awal (initialSlot)
       const initialBooks = [...lvl.books].sort((a, b) => a.initialSlot - b.initialSlot);
@@ -99,6 +101,10 @@ class DDCGameApp {
       showHint: false
     };
 
+    if (this.selectedBook && this.selectedBook.levelId === levelId) {
+      this.selectedBook = null;
+    }
+
     this.updateStats();
     this.renderLevelCard(levelId);
   }
@@ -108,12 +114,23 @@ class DDCGameApp {
     const lvlState = this.state[levelId];
     if (lvlState) {
       lvlState.showHint = !lvlState.showHint;
+      const card = document.querySelector(`.level-card[data-level-id="${levelId}"]`);
+      if (card) {
+        const hintBox = card.querySelector('.hint-box');
+        if (hintBox) {
+          hintBox.classList.toggle('show', lvlState.showHint);
+          return;
+        }
+      }
       this.renderLevelCard(levelId);
     }
   }
 
   // Pengendali Klik/Ketik Buku (Untuk Kemudahan Akses & Skrin Sentuh)
   handleBookClick(levelId, bookIndex) {
+    // Abaikan jika acara ini adalah ekor daripada seretan (drag release)
+    if (this.isDragging) return;
+
     const lvlState = this.state[levelId];
     if (!lvlState) return;
 
@@ -380,6 +397,12 @@ class DDCGameApp {
 
           ${feedbackHTML}
 
+          ${isSolved && level.explanation ? `
+            <div class="explanation-box show">
+              <strong>💡 Penjelasan Klasifikasi DDC:</strong> ${level.explanation}
+            </div>
+          ` : ''}
+
           <div class="hint-box ${lvlState.showHint ? 'show' : ''}">
             <strong>Petua / Hint:</strong> ${level.hint}
           </div>
@@ -398,6 +421,7 @@ class DDCGameApp {
 
     books.forEach(book => {
       book.addEventListener('dragstart', (e) => {
+        this.isDragging = true;
         sounds.playPickup();
         const levelId = parseInt(book.getAttribute('data-level-id'));
         const bookIndex = parseInt(book.getAttribute('data-book-index'));
@@ -447,8 +471,11 @@ class DDCGameApp {
 
       book.addEventListener('dragend', () => {
         book.classList.remove('dragging');
-        slots.forEach(s => s.classList.remove('drag-over'));
+        document.querySelectorAll('.slot').forEach(s => s.classList.remove('drag-over'));
         this.draggedBook = null;
+        setTimeout(() => {
+          this.isDragging = false;
+        }, 50);
       });
     });
 

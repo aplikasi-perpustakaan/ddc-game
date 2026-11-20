@@ -1,6 +1,7 @@
 /**
- * LCC Game - Sintesis Audio Web (Web Audio API)
+ * DDC Game - Sintesis Audio Web (Web Audio API)
  * Memberikan kesan bunyi interaktif tanpa memerlukan fail audio luaran.
+ * Hak Cipta (c) 2026 Perpustakaan Tun Abdul Razak, Universiti Teknologi MARA
  */
 
 class SoundEffects {
@@ -70,6 +71,11 @@ class SoundEffects {
     } catch (e) {}
   }
 
+  // Alias untuk playPlace (digunakan oleh pengendali susunan buku)
+  playPlace() {
+    this.playDrop();
+  }
+
   // Bunyi Jawapan Betul (Chime harmoni C-E-G-C)
   playCorrect() {
     if (this.muted) return;
@@ -116,6 +122,43 @@ class SoundEffects {
       gain.connect(this.ctx.destination);
       osc.start();
       osc.stop(this.ctx.currentTime + 0.28);
+    } catch (e) {}
+  }
+
+  // Bunyi Kejayaan Keraian Selesai Semua 10 Tahap (Fanfare Victory Chime)
+  playVictory() {
+    if (this.muted) return;
+    this.init();
+    if (!this.ctx) return;
+
+    try {
+      // Melodi keraian menaik: C5, E5, G5, C6, diikuti kord penuh G5+C6+E6
+      const fanfareNotes = [
+        { f: 523.25, t: 0.00, d: 0.18 }, // C5
+        { f: 659.25, t: 0.12, d: 0.18 }, // E5
+        { f: 783.99, t: 0.24, d: 0.18 }, // G5
+        { f: 1046.50, t: 0.36, d: 0.55 }, // C6
+        // Kord kemuncak serentak
+        { f: 659.25, t: 0.42, d: 0.65 }, // E5
+        { f: 783.99, t: 0.42, d: 0.65 }, // G5
+        { f: 1318.51, t: 0.42, d: 0.85 }  // E6
+      ];
+
+      fanfareNotes.forEach(note => {
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        const start = this.ctx.currentTime + note.t;
+        osc.frequency.setValueAtTime(note.f, start);
+
+        gain.gain.setValueAtTime(0.2, start);
+        gain.gain.exponentialRampToValueAtTime(0.001, start + note.d);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(start);
+        osc.stop(start + note.d);
+      });
     } catch (e) {}
   }
 }

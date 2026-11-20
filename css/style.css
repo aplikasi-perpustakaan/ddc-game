@@ -324,6 +324,7 @@ body {
   border: 1px solid var(--border-color);
   overflow: hidden;
   transition: transform 0.2s ease;
+  scroll-margin-top: 85px;
 }
 
 .level-header {
@@ -783,9 +784,11 @@ body {
     border-radius: 6px;
   }
   .shelf-slots {
+    justify-content: flex-start;
     gap: 8px;
     overflow-x: auto;
     padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
   }
   .slot {
     width: 66px;
